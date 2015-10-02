@@ -7,17 +7,21 @@
 //
 
 #import "ViewController.h"
-
+#import "Weather.h"
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     [Weather loadWeatherDataFinish:^(NSArray *weatherArr) {
+         NSLog(@"%@",weatherArr);
+    }];
+
     // Do any additional setup after loading the view, typically from a nib.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
